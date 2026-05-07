@@ -26,5 +26,5 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y zsh
 
       - name: Run smoke test
-        run: ./test/smoke.sh
+        run: bash ./test/smoke.sh
         shell: ${{ matrix.shell }}

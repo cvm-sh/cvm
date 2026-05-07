@@ -9,7 +9,7 @@
     "cvm-installer": "./bin/cvm-installer"
   },
   "scripts": {
-    "test": "./test/smoke.sh"
+    "test": "./test/run.sh"
   },
   "files": [
     "bash_completion",
