@@ -87,8 +87,8 @@ Usage:
   cvm deactivate
   cvm unload
   cvm current
-  cvm ls
-  cvm ls-remote [prefix]
+  cvm ls                    Show locally installed versions
+  cvm ls-remote [prefix]    Show installable remote versions
   cvm version <version>
   cvm version-remote <version|latest>
   cvm which <version>
@@ -99,6 +99,9 @@ Usage:
   cvm cache dir|clear
 
 Examples:
+  cvm ls
+  cvm ls-remote
+  cvm ls-remote 1.0
   cvm install latest
   cvm install 1.0
   cvm use 1.0.117
@@ -139,13 +142,23 @@ cvm_cache_dir() {
 cvm_strip_path() {
   local entry
   local new_path
-  local old_ifs
+  local remainder
 
   new_path=''
-  old_ifs=$IFS
-  IFS=':'
+  remainder="${PATH-}"
 
-  for entry in $PATH; do
+  while [ -n "$remainder" ]; do
+    case "$remainder" in
+      *:*)
+        entry="${remainder%%:*}"
+        remainder="${remainder#*:}"
+        ;;
+      *)
+        entry="$remainder"
+        remainder=''
+        ;;
+    esac
+
     case "$entry" in
       "$CVM_DIR"/versions/*/bin|"$CVM_DIR"/current/bin)
         ;;
@@ -161,7 +174,6 @@ cvm_strip_path() {
     esac
   done
 
-  IFS=$old_ifs
   printf '%s\n' "$new_path"
 }
 
