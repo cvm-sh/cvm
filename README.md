@@ -1,6 +1,6 @@
 # cvm
 
-`cvm` is a version manager for Claude Code, intentionally modeled after `nvm`.
+`cvm` is a version manager for Claude Code.
 
 [MIT licensed](./LICENSE) and designed to live comfortably in a public GitHub repository.
 
@@ -44,8 +44,8 @@ cvm use <version|default|system>
 cvm deactivate
 cvm unload
 cvm current
-cvm ls
-cvm ls-remote [prefix]
+cvm ls                    # locally installed versions
+cvm ls-remote [prefix]    # installable remote versions
 cvm version <version>
 cvm version-remote <version|latest>
 cvm which <version>
@@ -163,6 +163,24 @@ GitHub organization target: [cvm-sh/cvm](https://github.com/cvm-sh/cvm)
 
 ## Usage
 
+List what is already installed locally:
+
+```sh
+cvm ls
+```
+
+List all installable Claude Code versions from npm:
+
+```sh
+cvm ls-remote
+```
+
+Filter remote versions by prefix:
+
+```sh
+cvm ls-remote 1.0
+```
+
 Install the latest Claude Code:
 
 ```sh
@@ -179,6 +197,12 @@ Switch versions in the current shell:
 
 ```sh
 cvm use 1.0.117
+claude --version
+```
+
+If `cvm current` or `cvm ls` shows `system`, the active Claude Code is whatever `claude` is already available on your `PATH`. To check that version, run:
+
+```sh
 claude --version
 ```
 
