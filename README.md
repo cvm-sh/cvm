@@ -100,13 +100,13 @@ You can install `cvm` in four common ways.
 Install:
 
 ```sh
-curl -o- https://raw.githubusercontent.com/cvm-sh/cvm/v0.1.0/install.sh | CVM_INSTALL_VERSION=v0.1.0 bash
+curl -o- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.1/install.sh | CVM_INSTALL_VERSION=v0.0.1 bash
 ```
 
 Update:
 
 ```sh
-curl -o- https://raw.githubusercontent.com/cvm-sh/cvm/v0.1.0/install.sh | CVM_INSTALL_VERSION=v0.1.0 bash
+curl -o- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.1/install.sh | CVM_INSTALL_VERSION=v0.0.1 bash
 ```
 
 ### 2. Wget
@@ -114,13 +114,13 @@ curl -o- https://raw.githubusercontent.com/cvm-sh/cvm/v0.1.0/install.sh | CVM_IN
 Install:
 
 ```sh
-wget -qO- https://raw.githubusercontent.com/cvm-sh/cvm/v0.1.0/install.sh | CVM_INSTALL_VERSION=v0.1.0 bash
+wget -qO- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.1/install.sh | CVM_INSTALL_VERSION=v0.0.1 bash
 ```
 
 Update:
 
 ```sh
-wget -qO- https://raw.githubusercontent.com/cvm-sh/cvm/v0.1.0/install.sh | CVM_INSTALL_VERSION=v0.1.0 bash
+wget -qO- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.1/install.sh | CVM_INSTALL_VERSION=v0.0.1 bash
 ```
 
 ### 3. npm
@@ -144,7 +144,7 @@ cvm-installer
 Install:
 
 ```sh
-brew install --formula https://raw.githubusercontent.com/cvm-sh/cvm/v0.1.0/Formula/cvm.rb
+brew install --formula https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.1/Formula/cvm.rb
 cvm-installer
 ```
 
@@ -157,7 +157,7 @@ cvm-installer
 
 After any installation or update method, restart your shell or source your shell profile.
 
-Replace `v0.1.0` with the release tag you want to install.
+Replace `v0.0.1` with the release tag you want to install.
 
 ## GitHub
 

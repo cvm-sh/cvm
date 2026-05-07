@@ -1,8 +1,8 @@
 class Cvm < Formula
   desc "nvm-style version manager for Claude Code"
   homepage "https://github.com/cvm-sh/cvm"
-  url "https://github.com/cvm-sh/cvm/archive/refs/tags/v0.1.0.tar.gz"
-  version "0.1.0"
+  url "https://github.com/cvm-sh/cvm/archive/refs/tags/v0.0.1.tar.gz"
+  version "0.0.1"
   sha256 :no_check
   license "MIT"
 
