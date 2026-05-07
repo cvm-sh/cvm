@@ -5,15 +5,18 @@
   "license": "MIT",
   "private": false,
   "bin": {
-    "cvm-exec": "./cvm-exec"
+    "cvm-exec": "./cvm-exec",
+    "cvm-installer": "./bin/cvm-installer"
   },
   "scripts": {
     "test": "./test/smoke.sh"
   },
   "files": [
     "bash_completion",
+    "bin",
     "cvm-exec",
     "cvm.sh",
+    "Formula",
     "install.sh",
     "lib",
     "LICENSE",

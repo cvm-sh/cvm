@@ -91,6 +91,72 @@ source ~/.zshrc
 
 If your shell profile is not `~/.zshrc`, source the file printed by the installer.
 
+## Installing and Updating
+
+You can install `cvm` in four common ways.
+
+### 1. Curl
+
+Install:
+
+```sh
+curl -o- https://raw.githubusercontent.com/cvm-sh/cvm/main/install.sh | bash
+```
+
+Update:
+
+```sh
+curl -o- https://raw.githubusercontent.com/cvm-sh/cvm/main/install.sh | bash
+```
+
+### 2. Wget
+
+Install:
+
+```sh
+wget -qO- https://raw.githubusercontent.com/cvm-sh/cvm/main/install.sh | bash
+```
+
+Update:
+
+```sh
+wget -qO- https://raw.githubusercontent.com/cvm-sh/cvm/main/install.sh | bash
+```
+
+### 3. npm
+
+Install:
+
+```sh
+npm install -g cvm-sh
+cvm-installer
+```
+
+Update:
+
+```sh
+npm update -g cvm-sh
+cvm-installer
+```
+
+### 4. Homebrew
+
+Install:
+
+```sh
+brew install --formula https://raw.githubusercontent.com/cvm-sh/cvm/main/Formula/cvm.rb
+cvm-installer
+```
+
+Update:
+
+```sh
+brew upgrade cvm
+cvm-installer
+```
+
+After any installation or update method, restart your shell or source your shell profile.
+
 ## GitHub
 
 GitHub organization target: [cvm-sh/cvm](https://github.com/cvm-sh/cvm)
