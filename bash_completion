@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+_cvm_versions() {
+  if [ -d "${CVM_DIR:-$HOME/.cvm}/versions" ]; then
+    find "${CVM_DIR:-$HOME/.cvm}/versions" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; 2>/dev/null
+  fi
+}
+
+_cvm_aliases() {
+  if [ -d "${CVM_DIR:-$HOME/.cvm}/alias" ]; then
+    find "${CVM_DIR:-$HOME/.cvm}/alias" -mindepth 1 -maxdepth 1 -type f -exec basename {} \; 2>/dev/null
+  fi
+}
+
+_cvm() {
+  local current
+  local commands
+  local versions
+
+  current="${COMP_WORDS[COMP_CWORD]}"
+  commands='install uninstall use deactivate unload current ls list ls-remote list-remote version version-remote which run exec alias unalias cache help'
+  versions="$(_cvm_versions) $(_cvm_aliases) default system latest"
+
+  case "${COMP_WORDS[1]}" in
+    install|use|version|version-remote|which|run|exec|uninstall)
+      COMPREPLY=($(compgen -W "$versions" -- "$current"))
+      return 0
+      ;;
+    alias)
+      if [ "$COMP_CWORD" -eq 2 ]; then
+        COMPREPLY=($(compgen -W "$(_cvm_aliases) default" -- "$current"))
+      else
+        COMPREPLY=($(compgen -W "$versions" -- "$current"))
+      fi
+      return 0
+      ;;
+    cache)
+      COMPREPLY=($(compgen -W 'dir clear' -- "$current"))
+      return 0
+      ;;
+  esac
+
+  COMPREPLY=($(compgen -W "$commands" -- "$current"))
+}
+
+complete -F _cvm cvm

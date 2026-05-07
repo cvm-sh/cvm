@@ -1,0 +1,40 @@
+{
+  "name": "cvm-sh",
+  "version": "0.1.0",
+  "description": "A nvm-style version manager for Claude Code",
+  "license": "MIT",
+  "private": false,
+  "bin": {
+    "cvm-exec": "./cvm-exec"
+  },
+  "scripts": {
+    "test": "./test/smoke.sh"
+  },
+  "files": [
+    "bash_completion",
+    "cvm-exec",
+    "cvm.sh",
+    "install.sh",
+    "lib",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "version-manager",
+    "nvm",
+    "shell"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cvm-sh/cvm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cvm-sh/cvm/issues"
+  },
+  "homepage": "https://github.com/cvm-sh/cvm#readme"
+}
