@@ -7,6 +7,7 @@ test_home="$(new_test_home)"
 export HOME="$test_home/home"
 mkdir -p "$HOME"
 export SHELL="/bin/zsh"
+export CVM_DIR="$HOME/.cvm"
 export CVM_INSTALL_GITHUB_REPO="cvm-sh/cvm"
 export CVM_INSTALL_VERSION="main"
 

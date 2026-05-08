@@ -63,6 +63,7 @@ This repository is intentionally close to the `nvm` shape:
 - `cvm.sh`: main shell implementation
 - `cvm-exec`: helper executable for subprocess execution
 - `install.sh`: profile bootstrapper
+- `uninstall.sh`: profile and data cleanup
 - `bash_completion`: shell completion
 - `lib/version-filter.js`: Node-based version sorting/filtering helper
 - `package.json`: repository metadata for npm/GitHub ecosystems
@@ -100,13 +101,13 @@ You can install `cvm` in four common ways.
 Install:
 
 ```sh
-curl -o- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.1/install.sh | CVM_INSTALL_VERSION=v0.0.1 bash
+curl -o- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.2/install.sh | CVM_INSTALL_VERSION=v0.0.2 bash
 ```
 
 Update:
 
 ```sh
-curl -o- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.1/install.sh | CVM_INSTALL_VERSION=v0.0.1 bash
+curl -o- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.2/install.sh | CVM_INSTALL_VERSION=v0.0.2 bash
 ```
 
 ### 2. Wget
@@ -114,13 +115,13 @@ curl -o- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.1/install.sh | CVM_IN
 Install:
 
 ```sh
-wget -qO- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.1/install.sh | CVM_INSTALL_VERSION=v0.0.1 bash
+wget -qO- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.2/install.sh | CVM_INSTALL_VERSION=v0.0.2 bash
 ```
 
 Update:
 
 ```sh
-wget -qO- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.1/install.sh | CVM_INSTALL_VERSION=v0.0.1 bash
+wget -qO- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.2/install.sh | CVM_INSTALL_VERSION=v0.0.2 bash
 ```
 
 ### 3. npm
@@ -144,7 +145,7 @@ cvm-installer
 Install:
 
 ```sh
-brew install --formula https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.1/Formula/cvm.rb
+brew install --formula https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.2/Formula/cvm.rb
 cvm-installer
 ```
 
@@ -157,7 +158,42 @@ cvm-installer
 
 After any installation or update method, restart your shell or source your shell profile.
 
-Replace `v0.0.1` with the release tag you want to install.
+Replace `v0.0.2` with the release tag you want to install.
+
+## Uninstalling
+
+`cvm` uninstalling has two parts:
+
+- remove the `~/.cvm` runtime files and shell profile integration
+- optionally remove the package entrypoint if you installed via `npm` or `brew`
+
+### 1. Curl
+
+```sh
+curl -o- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.2/uninstall.sh | bash
+```
+
+### 2. Wget
+
+```sh
+wget -qO- https://raw.githubusercontent.com/cvm-sh/cvm/v0.0.2/uninstall.sh | bash
+```
+
+### 3. npm
+
+```sh
+cvm-uninstaller
+npm uninstall -g cvm-sh
+```
+
+### 4. Homebrew
+
+```sh
+cvm-uninstaller
+brew uninstall cvm
+```
+
+After uninstalling, restart your shell or source your shell profile.
 
 ## GitHub
 

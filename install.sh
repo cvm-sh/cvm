@@ -3,6 +3,8 @@ set -e
 
 CVM_INSTALL_VERSION="${CVM_INSTALL_VERSION:-main}"
 CVM_INSTALL_GITHUB_REPO="${CVM_INSTALL_GITHUB_REPO:-cvm-sh/cvm}"
+CVM_PROFILE_BLOCK_START="# >>> cvm initialize >>>"
+CVM_PROFILE_BLOCK_END="# <<< cvm initialize <<<"
 
 cvm_install_has() {
   command -v "$1" >/dev/null 2>&1
@@ -98,9 +100,11 @@ fi
 if ! grep -Fq "$CVM_SH_DEST" "$PROFILE_FILE"; then
   cat >>"$PROFILE_FILE" <<EOF
 
+$CVM_PROFILE_BLOCK_START
 export CVM_DIR="\$HOME/.cvm"
 [ -s "$CVM_SH_DEST" ] && \. "$CVM_SH_DEST"
 [ -s "$CVM_COMPLETION_DEST" ] && \. "$CVM_COMPLETION_DEST"
+$CVM_PROFILE_BLOCK_END
 EOF
 fi
 

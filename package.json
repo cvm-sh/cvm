@@ -1,12 +1,13 @@
 {
   "name": "cvm-sh",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A nvm-style version manager for Claude Code",
   "license": "MIT",
   "private": false,
   "bin": {
     "cvm-exec": "./cvm-exec",
-    "cvm-installer": "./bin/cvm-installer"
+    "cvm-installer": "./bin/cvm-installer",
+    "cvm-uninstaller": "./bin/cvm-uninstaller"
   },
   "scripts": {
     "test": "./test/run.sh"
@@ -18,6 +19,7 @@
     "cvm.sh",
     "Formula",
     "install.sh",
+    "uninstall.sh",
     "lib",
     "LICENSE",
     "README.md"

@@ -1,8 +1,8 @@
 class Cvm < Formula
   desc "nvm-style version manager for Claude Code"
   homepage "https://github.com/cvm-sh/cvm"
-  url "https://github.com/cvm-sh/cvm/archive/refs/tags/v0.0.1.tar.gz"
-  version "0.0.1"
+  url "https://github.com/cvm-sh/cvm/archive/refs/tags/v0.0.2.tar.gz"
+  version "0.0.2"
   sha256 :no_check
   license "MIT"
 
@@ -24,6 +24,10 @@ class Cvm < Formula
         cvm-installer
 
       Then restart your shell or source your shell profile.
+
+      To uninstall later, run:
+
+        cvm-uninstaller
     EOS
   end
 
